@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
+    public Piece holdedPiece;
+    
     [SerializeField] private Color baseColor, offsetColor;
     [SerializeField] private SpriteRenderer spriteRenderer;
     
