@@ -41,8 +41,9 @@ public class TileManager : MonoBehaviour
             
             currentTile = SpawnPieceForTile(pos, currentTile, x, y);
             
-            //Debug.Log("tiles array [" + i%8 + ", "+ i/8+" ] : " + tilesArray[i%8, i/8]); //works !!
+            
             tilesArray[x, y] = currentTile;
+            Debug.Log("tiles array [" + i%8 + ", "+ i/8+" ] : " + tilesArray[i%8, i/8]); //works !!
             i++;
         }
     }
@@ -67,7 +68,7 @@ public class TileManager : MonoBehaviour
         return currentTile;
         
     }
-    public void DeselectAllTiles()
+    public void DeselectAllTiles() //does not work
     {
         foreach (var tile in tilesArray)
         {
