@@ -1588,37 +1588,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1129903925
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1129903926}
-  m_Layer: 0
-  m_Name: Pieces
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1129903926
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129903925}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1192821990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +1800,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 10611149594402243, guid: b6eaa9fe399b8a645ad1eda8645c80ca, type: 3}
+  isSavedGame: 0
+  piecePrefabsW:
+  - {fileID: -363812061091768664, guid: d2c29973ac9e2384196258475d9576c7, type: 3}
+  - {fileID: 6182868114719010335, guid: 85f63e09d0170854684d645a7ce56391, type: 3}
+  - {fileID: 3059099951763756605, guid: 75ec1c90da25b4841888331b975dbac3, type: 3}
+  - {fileID: -1530261390186731271, guid: ea06eac904c74b74c87ff7bd4bc0f5b7, type: 3}
+  - {fileID: 3744520641739684325, guid: 33da5ffdd98793143880ffce06f8f008, type: 3}
+  - {fileID: -2147733320210888395, guid: 7c2161e0c6da41d4c91dbfb71ad26472, type: 3}
+  piecePrefabsB:
+  - {fileID: 4094790240848282914, guid: 99d89ebf13ea0794683c9b963f14a780, type: 3}
+  - {fileID: 7999311765380423403, guid: 4ec9c375d30cf714793bdda84230e932, type: 3}
+  - {fileID: -5817843274238961420, guid: 8cf9d0bf3a1ca684e8e7e7eaf5f9c19a, type: 3}
+  - {fileID: 4489493164108836813, guid: b805197eb63decc42897cdead4162e64, type: 3}
+  - {fileID: 1666309045165578195, guid: 1da8fc30c4fdb8447b5f07ec86ed0752, type: 3}
+  - {fileID: -6529321193472290707, guid: 7b733a0dc4df18e4bba7ce20013b83b1, type: 3}
 --- !u!1 &1847497001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,6 +2771,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1192821992}
   - {fileID: 709633030}
-  - {fileID: 1129903926}
   - {fileID: 459665353}
   - {fileID: 102903763}
