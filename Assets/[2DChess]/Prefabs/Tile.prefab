@@ -398,6 +398,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75451c2c0dbf479682de5651f227a171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeselectAllTiles:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  holdedPiece: {fileID: 0}
   baseColor: {r: 0.22352943, g: 0.22352943, b: 0.22352943, a: 1}
   offsetColor: {r: 1, g: 1, b: 1, a: 1}
   spriteRenderer: {fileID: 8127224328669882344}
@@ -405,3 +421,4 @@ MonoBehaviour:
   selected: {fileID: 684150475392383632}
   selectable: {fileID: 6451506333070804041}
   isSelected: 0
+  currentlySelectedTile: {fileID: 0}
