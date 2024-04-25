@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pawn
+  - Queen
+  - Kinght
+  - Rook
+  - Bishop
+  - King
   layers:
   - Default
   - TransparentFX
@@ -49,4 +55,7 @@ TagManager:
     locked: 0
   - name: Highlight
     uniqueID: 3697418687
+    locked: 0
+  - name: Pieces
+    uniqueID: 2524250681
     locked: 0
