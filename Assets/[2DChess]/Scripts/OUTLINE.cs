@@ -18,7 +18,6 @@ Scripts:
 (Game Manager) GameMaster -> responsible for game phase changes, (ui)turn
                             *TurnChangeEvent
 (Game Manager) JsonManager -> save game, load game
-(Pieces) PieceSpawner -> spawns in all pieces on the correct tiles according to StartArray
 (Pieces) PieceMovement -> contains the methods for events such as
                          *PieceSelectedEvent, *PieceMovedEvent
 Piece -> abstract class containing methods that are to be used by every piece type:
