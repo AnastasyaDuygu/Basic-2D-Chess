@@ -61,4 +61,5 @@ Events:
 4. *PieceMovedEvent -> change turn event invoked, checks if the clicked tile has a piece, 
                         moves piece o clicked tile, if clicked tile has the king *GameEndEvent
 5. *GameEndEvent -> end game canvas opens, shows who won the game and replay button
+6. *NoSavedGameEvent -> disabled saved game button, and displays warning message
 */
