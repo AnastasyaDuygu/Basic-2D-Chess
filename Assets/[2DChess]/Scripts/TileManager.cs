@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    [SerializeField] private Tile tilePrefab;
-
     public bool isSavedGame = false;
 
     public Piece[] piecePrefabsW = new Piece[6];
@@ -21,8 +19,8 @@ public class TileManager : MonoBehaviour
     };
     public Tile[,] tilesArray = new Tile[8,8];
     
-    private Vector3 startPoint = new Vector3(-1.12f,-1.12f,0);
-    private static float incrementAmount = 0.32f;
+    //private Vector3 startPoint = new Vector3(-1.12f,-1.12f,0);
+    //private static float incrementAmount = 0.32f;
     
     void OnEnable()
     {
@@ -33,30 +31,26 @@ public class TileManager : MonoBehaviour
     }
     public void GenerateGrid()
     {
-        for (int y = 0; y < 8; y++)
+        int i = 0;
+        foreach(Transform child in transform)
         {
-            for (int x = 0; x < 8; x++)
-            {
-                var pos = startPoint;
-                pos.x += incrementAmount * x;
-                pos.y += incrementAmount * y;
-                
-                var spawnedTile = Instantiate(tilePrefab, pos, Quaternion.identity, transform);
-                spawnedTile.name = $"Tile {x} {y}";
-                var isOffset = Math.Abs((x + y) % 2) == 1;
-                spawnedTile.Init(isOffset);
-                
-                SpawnPieceForTile(pos, spawnedTile, x, y);
-                
-                tilesArray[x,y] = spawnedTile; //add to tile array
-            }
+            int x = i % 8;
+            int y = i / 8;
+            var currentTile = child.GetComponent<Tile>();
+            var pos = currentTile.transform.position;
+            
+            currentTile = SpawnPieceForTile(pos, currentTile, x, y);
+            
+            //Debug.Log("tiles array [" + i%8 + ", "+ i/8+" ] : " + tilesArray[i%8, i/8]); //works !!
+            tilesArray[x, y] = currentTile;
+            i++;
         }
     }
 
-    private void SpawnPieceForTile(Vector3 pos, Tile spawnedTile, int x, int y)
+    private Tile SpawnPieceForTile(Vector3 pos, Tile currentTile, int x, int y)
     {
-        int startPieceCode = startArray[y, x];
-        if (startPieceCode == 0) return;
+        int startPieceCode = startArray[y, x]; //it needs to be flipped because of the start array
+        if (startPieceCode == 0) return currentTile;
         Piece piece = null;
         if (startPieceCode / 10 == 1) //white
             piece = piecePrefabsW[startPieceCode % 10 - 1];
@@ -65,11 +59,12 @@ public class TileManager : MonoBehaviour
 
         if (piece != null)
         {
-            var spawnedPiece = Instantiate(piece, pos, Quaternion.identity, spawnedTile.transform);
+            var spawnedPiece = Instantiate(piece, pos, Quaternion.identity, currentTile.transform);
             spawnedPiece.transform.localScale = new Vector3(4, 4, 1);
             spawnedPiece.isFirstMove = false;
-            spawnedTile.holdedPiece = spawnedPiece;
+            currentTile.holdedPiece = spawnedPiece;
         }
+        return currentTile;
         
     }
     public void DeselectAllTiles()
