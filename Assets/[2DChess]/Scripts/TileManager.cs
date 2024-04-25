@@ -72,4 +72,11 @@ public class TileManager : MonoBehaviour
         }
         
     }
+    public void DeselectAllTiles()
+    {
+        foreach (var tile in tilesArray)
+        {
+            tile.Deselect();
+        }
+    }
 }
