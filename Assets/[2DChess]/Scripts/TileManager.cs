@@ -23,7 +23,8 @@ public class TileManager : MonoBehaviour
     
     private Vector3 startPoint = new Vector3(-1.12f,-1.12f,0);
     private static float incrementAmount = 0.32f;
-    
+
+    public bool isDone;
     void OnEnable()
     {
         if (isSavedGame)
@@ -72,11 +73,14 @@ public class TileManager : MonoBehaviour
         }
         
     }
-    public void DeselectAllTiles()
+    public void DeselectAllTiles() //does not work
     {
         foreach (var tile in tilesArray)
         {
-            tile.Deselect();
+            if (tile.isSelected)
+                tile.DeselectSelected();
         }
+
+        isDone = true;
     }
 }

@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Tile : MonoBehaviour
 {
-    public UnityEvent PieceSelectedEvent;
+    public TileManager _tileManager;
+    
     public Piece holdedPiece;
     
     [SerializeField] private Color baseColor, offsetColor;
@@ -15,6 +17,10 @@ public class Tile : MonoBehaviour
     public bool isSelectable = false;
     public Tile currentlySelectedTile = null;
 
+    private void OnEnable()
+    {
+        _tileManager = FindObjectOfType<TileManager>();
+    }
     public void Init(bool isOffset)
     {
         spriteRenderer.color = isOffset ? offsetColor : baseColor;
@@ -31,16 +37,21 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         if (currentlySelectedTile == null) {
-            //DeselectAllTiles();
-            SelectTile();
+            StartCoroutine(SelectTile());
+
             //if selected tile has a piece in it highlight possible selectable tiles
+            //PieceSelectedEvent.Invoke(); 
             //if clicked on selectable tile piece moved event is triggered
         }else {
             DeselectTile();
         }
     }
-    private void SelectTile()
+    IEnumerator SelectTile()
     {
+        _tileManager.DeselectAllTiles(); //deselect all tiles before selecting new tile
+        while (!_tileManager.isDone)
+            yield return null;
+
         isSelected = true;
         selected.SetActive(true);
         currentlySelectedTile = this;
@@ -51,10 +62,8 @@ public class Tile : MonoBehaviour
         selected.SetActive(false);
         currentlySelectedTile = null;
     }
-
-    public void Deselect()
+    public void DeselectSelected()
     {
         selected.SetActive(false);
-        selectable.SetActive(false);
     }
 }
