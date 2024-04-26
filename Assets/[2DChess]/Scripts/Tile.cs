@@ -5,6 +5,9 @@ using UnityEngine.Events;
 public class Tile : MonoBehaviour
 {
     public TileManager _tileManager;
+
+    public int x = -1;
+    public int y = -1;
     
     public Piece holdedPiece;
     
@@ -37,8 +40,13 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         if (currentlySelectedTile == null) {
+            
             StartCoroutine(SelectTile());
 
+            if (holdedPiece != null)
+            {
+                holdedPiece.HighlightSelectable(x,y,_tileManager.tilesArray);
+            }
             //if selected tile has a piece in it highlight possible selectable tiles
             //PieceSelectedEvent.Invoke(); 
             //if clicked on selectable tile piece moved event is triggered

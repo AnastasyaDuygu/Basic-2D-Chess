@@ -44,6 +44,8 @@ public class TileManager : MonoBehaviour
                 
                 var spawnedTile = Instantiate(tilePrefab, pos, Quaternion.identity, transform);
                 spawnedTile.name = $"Tile {x} {y}";
+                spawnedTile.x = x;
+                spawnedTile.y = y;
                 var isOffset = Math.Abs((x + y) % 2) == 1;
                 spawnedTile.Init(isOffset);
                 
