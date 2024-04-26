@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8444022997913695152}
   - component: {fileID: 5592720687033795998}
-  - component: {fileID: 3059099951763756605}
+  - component: {fileID: 3922441025646783321}
   m_Layer: 0
   m_Name: white_knight
   m_TagString: Kinght
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3059099951763756605
+--- !u!114 &3922441025646783321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 922125505591543623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e473b36c78a05924f9044419656031c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fb8fb7f2f005fd4aa1b21a8b6e953c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1

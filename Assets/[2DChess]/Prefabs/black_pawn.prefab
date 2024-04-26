@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746773325866270483}
   - component: {fileID: 1820723140471665794}
-  - component: {fileID: 4094790240848282914}
+  - component: {fileID: -9215432420459348823}
   m_Layer: 0
   m_Name: black_pawn
   m_TagString: Pawn
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4094790240848282914
+--- !u!114 &-9215432420459348823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7284411794205967309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e473b36c78a05924f9044419656031c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b0493e0ef5323341b9c34c7855cec04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 2

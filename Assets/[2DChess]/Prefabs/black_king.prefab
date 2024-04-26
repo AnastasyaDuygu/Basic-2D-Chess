@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625152035200314896}
   - component: {fileID: 625152035200314897}
-  - component: {fileID: -6529321193472290707}
+  - component: {fileID: 8409963029500455494}
   m_Layer: 0
   m_Name: black_king
   m_TagString: King
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6529321193472290707
+--- !u!114 &8409963029500455494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 625152035200314911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e473b36c78a05924f9044419656031c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bb2d60d22d01324c888f13a53b093df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 2

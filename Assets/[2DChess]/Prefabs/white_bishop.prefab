@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2157395273367339408}
   - component: {fileID: 3054635846663748037}
-  - component: {fileID: -1530261390186731271}
+  - component: {fileID: -5248602883021419769}
   m_Layer: 0
   m_Name: white_bishop
   m_TagString: Bishop
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1530261390186731271
+--- !u!114 &-5248602883021419769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8365572852522789525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e473b36c78a05924f9044419656031c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 17b407655103b0d4183449623dfa0048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
