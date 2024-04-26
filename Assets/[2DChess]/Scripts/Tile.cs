@@ -5,7 +5,8 @@ using UnityEngine.Events;
 public class Tile : MonoBehaviour
 {
     public TileManager _tileManager;
-
+    public PieceMovement _pieceMovement;
+    
     public int x = -1;
     public int y = -1;
     
@@ -23,6 +24,7 @@ public class Tile : MonoBehaviour
     private void OnEnable()
     {
         _tileManager = FindObjectOfType<TileManager>();
+        _pieceMovement = FindObjectOfType<PieceMovement>();
     }
     public void Init(bool isOffset)
     {
@@ -39,27 +41,32 @@ public class Tile : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (currentlySelectedTile == null) {
-            
-            StartCoroutine(SelectTile());
+        if (!isSelected)
+        {
+            StartCoroutine(SelectTileCoroutine());
 
-            if (holdedPiece != null)
-            {
-                holdedPiece.HighlightSelectable(x,y,_tileManager.tilesArray);
-            }
             //if selected tile has a piece in it highlight possible selectable tiles
-            //PieceSelectedEvent.Invoke(); 
-            //if clicked on selectable tile piece moved event is triggered
-        }else {
-            DeselectTile();
-        }
+            if (holdedPiece != null)
+                holdedPiece.HighlightSelectable(x, y, _tileManager.tilesArray);
+
+            if (isSelectable && !SameColor()) //if clicked on selectable tile piece moved event is triggered
+                _pieceMovement.MovePiece();
+            
+        } else DeselectTile();
+        
     }
-    IEnumerator SelectTile()
+    IEnumerator SelectTileCoroutine()
     {
-        _tileManager.DeselectAllTiles(); //deselect all tiles before selecting new tile
+        _tileManager.isDone = false;
+        _tileManager.DeselectAllSelected(); //deselect all tiles before selecting new tile
         while (!_tileManager.isDone)
             yield return null;
+        
+        SelectTile();
+    }
 
+    private void SelectTile()
+    {
         isSelected = true;
         selected.SetActive(true);
         currentlySelectedTile = this;
@@ -69,9 +76,29 @@ public class Tile : MonoBehaviour
         isSelected = false;
         selected.SetActive(false);
         currentlySelectedTile = null;
+        _tileManager.DeselectAllSelectable();
     }
     public void DeselectSelected()
     {
         selected.SetActive(false);
+        isSelected = false;
+    }
+    public void DeselectSelectable()
+    {
+        selectable.SetActive(false);
+        isSelectable = false;
+    }
+    public void SelectableHighlight()
+    {
+        isSelectable = true;
+        selectable.SetActive(true);
+    }
+    private bool SameColor()
+    {
+        if(holdedPiece != null && holdedPiece.color == currentlySelectedTile.holdedPiece.color)
+        {
+            return true;
+        }
+        return false;
     }
 }
