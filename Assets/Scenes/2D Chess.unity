@@ -1933,6 +1933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1705290634}
   - component: {fileID: 1705290635}
+  - component: {fileID: 1705290636}
   m_Layer: 0
   m_Name: Tile Manager
   m_TagString: Untagged
@@ -1984,6 +1985,18 @@ MonoBehaviour:
   - {fileID: 6605654707589329122, guid: 1da8fc30c4fdb8447b5f07ec86ed0752, type: 3}
   - {fileID: 8409963029500455494, guid: 7b733a0dc4df18e4bba7ce20013b83b1, type: 3}
   isDone: 0
+--- !u!114 &1705290636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705290633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbebbc25669bd145801da4e95b955f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1847497001
 GameObject:
   m_ObjectHideFlags: 0
