@@ -1020,9 +1020,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.10199714
+    y: 0.07727274
     width: 1
-    height: 0.7960057
+    height: 0.8454545
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1970,19 +1970,20 @@ MonoBehaviour:
   tilePrefab: {fileID: 10611149594402243, guid: b6eaa9fe399b8a645ad1eda8645c80ca, type: 3}
   isSavedGame: 0
   piecePrefabsW:
-  - {fileID: -363812061091768664, guid: d2c29973ac9e2384196258475d9576c7, type: 3}
-  - {fileID: 6182868114719010335, guid: 85f63e09d0170854684d645a7ce56391, type: 3}
-  - {fileID: 3059099951763756605, guid: 75ec1c90da25b4841888331b975dbac3, type: 3}
-  - {fileID: -1530261390186731271, guid: ea06eac904c74b74c87ff7bd4bc0f5b7, type: 3}
-  - {fileID: 3744520641739684325, guid: 33da5ffdd98793143880ffce06f8f008, type: 3}
-  - {fileID: -2147733320210888395, guid: 7c2161e0c6da41d4c91dbfb71ad26472, type: 3}
+  - {fileID: -430318224249602287, guid: d2c29973ac9e2384196258475d9576c7, type: 3}
+  - {fileID: 8388944185083117255, guid: 85f63e09d0170854684d645a7ce56391, type: 3}
+  - {fileID: 3922441025646783321, guid: 75ec1c90da25b4841888331b975dbac3, type: 3}
+  - {fileID: -5248602883021419769, guid: ea06eac904c74b74c87ff7bd4bc0f5b7, type: 3}
+  - {fileID: 4299756202529106922, guid: 33da5ffdd98793143880ffce06f8f008, type: 3}
+  - {fileID: -8313718069751981917, guid: 7c2161e0c6da41d4c91dbfb71ad26472, type: 3}
   piecePrefabsB:
-  - {fileID: 4094790240848282914, guid: 99d89ebf13ea0794683c9b963f14a780, type: 3}
-  - {fileID: 7999311765380423403, guid: 4ec9c375d30cf714793bdda84230e932, type: 3}
-  - {fileID: -5817843274238961420, guid: 8cf9d0bf3a1ca684e8e7e7eaf5f9c19a, type: 3}
-  - {fileID: 4489493164108836813, guid: b805197eb63decc42897cdead4162e64, type: 3}
-  - {fileID: 1666309045165578195, guid: 1da8fc30c4fdb8447b5f07ec86ed0752, type: 3}
-  - {fileID: -6529321193472290707, guid: 7b733a0dc4df18e4bba7ce20013b83b1, type: 3}
+  - {fileID: -9215432420459348823, guid: 99d89ebf13ea0794683c9b963f14a780, type: 3}
+  - {fileID: -8398858306233361940, guid: 4ec9c375d30cf714793bdda84230e932, type: 3}
+  - {fileID: 5282977004165895817, guid: 8cf9d0bf3a1ca684e8e7e7eaf5f9c19a, type: 3}
+  - {fileID: 4614446423311493635, guid: b805197eb63decc42897cdead4162e64, type: 3}
+  - {fileID: 6605654707589329122, guid: 1da8fc30c4fdb8447b5f07ec86ed0752, type: 3}
+  - {fileID: 8409963029500455494, guid: 7b733a0dc4df18e4bba7ce20013b83b1, type: 3}
+  isDone: 0
 --- !u!1 &1847497001
 GameObject:
   m_ObjectHideFlags: 0
