@@ -18,7 +18,7 @@ Scripts:
 (Game Manager) GameMaster -> responsible for game phase changes, (ui)turn
                             *TurnChangeEvent
 (Game Manager) JsonManager -> save game, load game
-(Pieces) PieceMovement -> contains the methods for events such as
+(Tile Manager) PieceMovement -> contains the methods for events such as
                          *PieceSelectedEvent, *PieceMovedEvent
 Piece -> abstract class containing methods that are to be used by every piece type:
                 Pawn, Rook, Knight, Bishop, Queen, King : Piece,
