@@ -23,8 +23,8 @@ public class TileManager : MonoBehaviour
     
     private Vector3 startPoint = new Vector3(-1.12f,-1.12f,0);
     private static float incrementAmount = 0.32f;
-
-    public bool isDone;
+    
+    public Tile currentlySelectedTile = null;
     void OnEnable()
     {
         if (isSavedGame)
@@ -70,19 +70,28 @@ public class TileManager : MonoBehaviour
         {
             var spawnedPiece = Instantiate(piece, pos, Quaternion.identity, spawnedTile.transform);
             spawnedPiece.transform.localScale = new Vector3(4, 4, 1);
-            spawnedPiece.isFirstMove = false;
+            spawnedPiece.isFirstMove = true;
             spawnedTile.holdedPiece = spawnedPiece;
         }
         
     }
-    public void DeselectAllTiles() //does not work
+    public void DeselectAllSelectable()
     {
         foreach (var tile in tilesArray)
         {
-            if (tile.isSelected)
-                tile.DeselectSelected();
+            if (tile.isSelectable)
+                tile.DeselectSelectable();
         }
+    }
 
-        isDone = true;
+    public void IsSelectableAllFalse()
+    {
+        foreach (var tile in tilesArray)
+        {
+            if (tile.isSelectable)
+            {
+                tile.isSelectable = false;
+            }    
+        }
     }
 }

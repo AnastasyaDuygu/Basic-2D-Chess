@@ -19,7 +19,6 @@ public class Tile : MonoBehaviour
 
     public bool isSelected = false;
     public bool isSelectable = false;
-    public Tile currentlySelectedTile = null;
 
     private void OnEnable()
     {
@@ -43,59 +42,51 @@ public class Tile : MonoBehaviour
     {
         if (!isSelected)
         {
-            StartCoroutine(SelectTileCoroutine());
-
-            //if selected tile has a piece in it highlight possible selectable tiles
-            if (holdedPiece != null)
-                holdedPiece.HighlightSelectable(x, y, _tileManager.tilesArray);
-
-            if (isSelectable && !SameColor()) //if clicked on selectable tile piece moved event is triggered
-                _pieceMovement.MovePiece();
+            //deselect tile before selecting new tile
+            if (_tileManager.currentlySelectedTile != null) _tileManager.currentlySelectedTile.DeselectTile();
+            
+            SelectTile();
             
         } else DeselectTile();
         
-    }
-    IEnumerator SelectTileCoroutine()
-    {
-        _tileManager.isDone = false;
-        _tileManager.DeselectAllSelected(); //deselect all tiles before selecting new tile
-        while (!_tileManager.isDone)
-            yield return null;
+        if (isSelectable) //if clicked on selectable tile piece moved event is triggered
+            _pieceMovement.MovePiece();
         
-        SelectTile();
+        //TODO : deselect all isSelectable when a tile that is not selectable is clicked
+        
     }
-
     private void SelectTile()
     {
         isSelected = true;
         selected.SetActive(true);
-        currentlySelectedTile = this;
+        _tileManager.currentlySelectedTile = this;
+        
+        //if selected tile has a piece in it highlight possible selectable tiles
+        if (holdedPiece != null)
+            holdedPiece.HighlightSelectable(x, y, _tileManager.tilesArray);
     }
     private void DeselectTile()
     {
         isSelected = false;
         selected.SetActive(false);
-        currentlySelectedTile = null;
+        //_tileManager.currentlySelectedTile = null;
+        
+        //deselect all tiles selected & selectable
         _tileManager.DeselectAllSelectable();
-    }
-    public void DeselectSelected()
-    {
-        selected.SetActive(false);
-        isSelected = false;
     }
     public void DeselectSelectable()
     {
         selectable.SetActive(false);
-        isSelectable = false;
+        //isSelectable = false;
     }
     public void SelectableHighlight()
     {
         isSelectable = true;
         selectable.SetActive(true);
     }
-    private bool SameColor()
+    private bool SameColorPiece()
     {
-        if(holdedPiece != null && holdedPiece.color == currentlySelectedTile.holdedPiece.color)
+        if(holdedPiece != null && holdedPiece.color == _tileManager.currentlySelectedTile.holdedPiece.color)
         {
             return true;
         }
