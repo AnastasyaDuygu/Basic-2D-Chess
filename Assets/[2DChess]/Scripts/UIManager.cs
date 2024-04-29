@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Timer;
     [SerializeField] private TextMeshProUGUI Turn;
 
+    [SerializeField] private GameObject startMenu;
+    [SerializeField] private GameObject endMenu;
+    
     public TileManager _tileManager;
     
     public float elapsedTime;
@@ -28,6 +31,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         //only when start & end menu canvas are not active
+        if (endMenu.activeInHierarchy || startMenu.activeInHierarchy) return;
         elapsedTime += Time.deltaTime;
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);

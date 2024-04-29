@@ -731,6 +731,8 @@ MonoBehaviour:
   SavedGameButton: {fileID: 484410083}
   Timer: {fileID: 3719086839301818778}
   Turn: {fileID: 244078537120887760}
+  startMenu: {fileID: 574505265}
+  endMenu: {fileID: 348190869}
   _tileManager: {fileID: 0}
   elapsedTime: 0
   NoSavedGameEvent:
