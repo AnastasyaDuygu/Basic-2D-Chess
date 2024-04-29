@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI Timer;
     [SerializeField] private TextMeshProUGUI Turn;
+
+    public TileManager _tileManager;
     
     public float elapsedTime;
     
@@ -18,7 +20,10 @@ public class UIManager : MonoBehaviour
         //if no saved game
         NoSavedGameEvent.Invoke();
         SavedGameButton.interactable = false;
+        Turn.text = "Turn : White";
         //
+        _tileManager = FindObjectOfType<TileManager>();
+        
     }
     void Update()
     {
@@ -27,5 +32,13 @@ public class UIManager : MonoBehaviour
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
         Timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void UpdateUITurnText()
+    {
+        if (_tileManager.gameTurn == false)
+            Turn.text = "Turn : White";
+        else
+            Turn.text = "Turn : Black";
     }
 }

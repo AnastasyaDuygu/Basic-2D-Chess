@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TileManager : MonoBehaviour
 {
     [SerializeField] private Tile tilePrefab;
-
+    
     public bool gameTurn = false; // false = white, true = black
     public bool isSavedGame = false;
 
@@ -26,6 +27,8 @@ public class TileManager : MonoBehaviour
     private static float incrementAmount = 0.32f;
     
     public Tile currentlySelectedTile = null;
+    
+    public UnityEvent TurnChangeEvent;
     void OnEnable()
     {
         if (isSavedGame)
@@ -102,6 +105,7 @@ public class TileManager : MonoBehaviour
     {
         gameTurn = !gameTurn;
         DeselectAllBoard();
+        TurnChangeEvent.Invoke(); //UIManager -> UpdateUITurnTetx()
     }
     
     public void DeselectAllBoard()
