@@ -4,7 +4,7 @@ public class PieceMovement : MonoBehaviour
 {
     public void MovePiece(Tile currentlySelectedTile, Tile clickedTile, TileManager tileManager)
     {
-        Debug.Log("Piece Moved");
+        //Debug.Log("Piece Moved");
         
         //deselect all highlights & isSelectable/isSelected
         if (currentlySelectedTile.holdedPiece.isFirstMove == true)
