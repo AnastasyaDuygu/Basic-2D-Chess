@@ -734,6 +734,7 @@ MonoBehaviour:
   startMenu: {fileID: 574505265}
   endMenu: {fileID: 348190869}
   _tileManager: {fileID: 0}
+  _Json: {fileID: 0}
   elapsedTime: 0
   NoSavedGameEvent:
     m_PersistentCalls:
@@ -854,7 +855,55 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 484410084}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 837960101}
+        m_TargetAssemblyTypeName: JsonSaveLoadScript, Assembly-CSharp
+        m_MethodName: LoadFromJson
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 574505265}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1705290635}
+        m_TargetAssemblyTypeName: TileManager, Assembly-CSharp
+        m_MethodName: GenerateGrid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 378664836}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &484410084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,9 +1072,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.093939394
+    y: 0.094697
     width: 1
-    height: 0.8121212
+    height: 0.810606
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1336,7 +1385,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 721079363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 837960101}
+        m_TargetAssemblyTypeName: JsonSaveLoadScript, Assembly-CSharp
+        m_MethodName: SaveToJson
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &721079363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,6 +1579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837960100}
+  - component: {fileID: 837960101}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1541,6 +1603,22 @@ Transform:
   - {fileID: 1705290634}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837960101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837960099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131293c354fc14d4fbd0e356ca91c08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elapsedTime: 0
+  gameTurn: 0
+  _UIManager: {fileID: 0}
+  _TileManager: {fileID: 0}
 --- !u!1 &1013554877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,7 +2051,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 10611149594402243, guid: b6eaa9fe399b8a645ad1eda8645c80ca, type: 3}
   gameTurn: 0
-  isSavedGame: 0
   piecePrefabsW:
   - {fileID: -430318224249602287, guid: d2c29973ac9e2384196258475d9576c7, type: 3}
   - {fileID: 8388944185083117255, guid: 85f63e09d0170854684d645a7ce56391, type: 3}
