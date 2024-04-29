@@ -14,15 +14,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject endMenu;
     
     public TileManager _tileManager;
+    public JsonSaveLoadScript _Json;
     
     public float elapsedTime;
     public UnityEvent NoSavedGameEvent;
     private void Start()
     {
+        _Json = FindObjectOfType<JsonSaveLoadScript>();
         //if no saved game
-        NoSavedGameEvent.Invoke();
-        SavedGameButton.interactable = false;
-        //
+        if (!_Json.CheckIfFileExists())
+        {
+            NoSavedGameEvent.Invoke();
+            SavedGameButton.interactable = false;
+        }
+        
         _tileManager = FindObjectOfType<TileManager>();
         if(_tileManager.gameTurn == false) 
             Turn.text = "Turn : White";
