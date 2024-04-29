@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb2d60d22d01324c888f13a53b093df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 2
+  color: 1
   isFirstMove: 1
