@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Pawn : Piece
@@ -38,7 +37,7 @@ public class Pawn : Piece
         {
             if (isPieceInTile(tileArray[rightx, yafter]) && diffColor(tileArray[rightx,yafter], color)) 
             {
-                Debug.Log("PIECE RIGHT");
+                //Debug.Log("PIECE RIGHT");
                 tileArray[rightx, yafter].SelectableHighlight();
             }
         }
@@ -46,7 +45,7 @@ public class Pawn : Piece
         {
             if (isPieceInTile(tileArray[leftx, yafter]) && diffColor(tileArray[leftx, yafter], color))
             {
-                Debug.Log("PIECE LEFT");
+                //Debug.Log("PIECE LEFT");
                 tileArray[leftx, yafter].SelectableHighlight();
             }
         }
