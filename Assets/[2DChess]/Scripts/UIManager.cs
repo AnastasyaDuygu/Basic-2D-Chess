@@ -16,16 +16,17 @@ public class UIManager : MonoBehaviour
     public TileManager _tileManager;
     
     public float elapsedTime;
-    
     public UnityEvent NoSavedGameEvent;
     private void Start()
     {
         //if no saved game
         NoSavedGameEvent.Invoke();
         SavedGameButton.interactable = false;
-        Turn.text = "Turn : White";
         //
         _tileManager = FindObjectOfType<TileManager>();
+        if(_tileManager.gameTurn == false) 
+            Turn.text = "Turn : White";
+        else Turn.text = "Turn : Black";
         
     }
     void Update()
