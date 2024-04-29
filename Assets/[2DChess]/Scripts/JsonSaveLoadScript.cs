@@ -31,7 +31,7 @@ public class JsonSaveLoadScript : MonoBehaviour
 
         string output = JsonUtility.ToJson(data, true);
         File.WriteAllText(Application.dataPath + "/[2DChess]/Data/GameDataFile.json", output);
-        Debug.Log(output);
+        //Debug.Log(output);
     }
     public void LoadFromJson()
     {
@@ -43,6 +43,10 @@ public class JsonSaveLoadScript : MonoBehaviour
             _UIManager.elapsedTime = data.elapsedTime;
             _TileManager.gameTurn = data.gameTurn;
             _TileManager.startArray = convertJsonStringToArray(data.startArray);
+            
+            if(_TileManager.gameTurn == false) 
+                _UIManager.Turn.text = "Turn : White";
+            else _UIManager.Turn.text = "Turn : Black";
         }
         else Debug.LogWarning("NO SAVED GAME");
     }

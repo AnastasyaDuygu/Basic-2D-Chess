@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button SavedGameButton;
 
     [SerializeField] private TextMeshProUGUI Timer;
-    [SerializeField] private TextMeshProUGUI Turn;
+    [SerializeField] public TextMeshProUGUI Turn;
 
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject endMenu;
@@ -27,12 +27,9 @@ public class UIManager : MonoBehaviour
             NoSavedGameEvent.Invoke();
             SavedGameButton.interactable = false;
         }
-        
+
         _tileManager = FindObjectOfType<TileManager>();
-        if(_tileManager.gameTurn == false) 
-            Turn.text = "Turn : White";
-        else Turn.text = "Turn : Black";
-        
+        Turn.text = "Turn : White";
     }
     void Update()
     {
