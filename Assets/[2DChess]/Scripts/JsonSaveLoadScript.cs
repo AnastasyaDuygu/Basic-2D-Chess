@@ -30,14 +30,14 @@ public class JsonSaveLoadScript : MonoBehaviour
         data.gameTurn = gameTurn;
 
         string output = JsonUtility.ToJson(data, true);
-        File.WriteAllText(Application.dataPath + "/[2DChess]/SaveData/GameDataFile.json", output);
+        File.WriteAllText(Application.dataPath + "/[2DChess]/Data/GameDataFile.json", output);
         Debug.Log(output);
     }
     public void LoadFromJson()
     {
         if(CheckIfFileExists())
         {
-            string jsonData = File.ReadAllText(Application.dataPath + "/[2DChess]/SaveData/GameDataFile.json");
+            string jsonData = File.ReadAllText(Application.dataPath + "/[2DChess]/Data/GameDataFile.json");
             GameData data = JsonUtility.FromJson<GameData>(jsonData);
             //
             _UIManager.elapsedTime = data.elapsedTime;
@@ -48,12 +48,13 @@ public class JsonSaveLoadScript : MonoBehaviour
     }
     private string convertArrayToString()
     {
-        string pieceName = "";
+        string pieceName;
         int pieceCode = -1;
         for (int y = 0; y < 8; y++)
         {
             for (int x = 0; x < 8; x++)
             {
+                pieceName = "";
                 if(tilesArray[x, y].holdedPiece != null)
                     pieceName = tilesArray[x, y].holdedPiece.name.Remove(tilesArray[x, y].holdedPiece.name.Length - 7);
                 pieceCode = findPieceCode(pieceName);
@@ -93,7 +94,7 @@ public class JsonSaveLoadScript : MonoBehaviour
 
     public bool CheckIfFileExists()
     {
-        if (File.Exists(Application.dataPath + "/[2DChess]/SaveData/GameDataFile.json"))
+        if (File.Exists(Application.dataPath + "/[2DChess]/Data/GameDataFile.json"))
         {
             return true;
         }
