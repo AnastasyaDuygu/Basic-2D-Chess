@@ -7,7 +7,6 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile tilePrefab;
     
     public bool gameTurn = false; // false = white, true = black
-    public bool isSavedGame = false;
 
     public Piece[] piecePrefabsW = new Piece[6];
     public Piece[] piecePrefabsB = new Piece[6];
@@ -29,13 +28,6 @@ public class TileManager : MonoBehaviour
     public Tile currentlySelectedTile = null;
     
     public UnityEvent TurnChangeEvent;
-    void OnEnable()
-    {
-        if (isSavedGame)
-        {
-            //load start array from json
-        }
-    }
     public void GenerateGrid()
     {
         for (int y = 0; y < 8; y++)
