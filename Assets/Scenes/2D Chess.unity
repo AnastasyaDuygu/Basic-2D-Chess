@@ -731,6 +731,7 @@ MonoBehaviour:
   SavedGameButton: {fileID: 484410083}
   Timer: {fileID: 3719086839301818778}
   Turn: {fileID: 244078537120887760}
+  _tileManager: {fileID: 0}
   elapsedTime: 0
   NoSavedGameEvent:
     m_PersistentCalls:
@@ -1020,9 +1021,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.07727274
+    y: 0.093939394
     width: 1
-    height: 0.8454545
+    height: 0.8121212
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1969,6 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 10611149594402243, guid: b6eaa9fe399b8a645ad1eda8645c80ca, type: 3}
+  gameTurn: 0
   isSavedGame: 0
   piecePrefabsW:
   - {fileID: -430318224249602287, guid: d2c29973ac9e2384196258475d9576c7, type: 3}
@@ -1984,7 +1986,22 @@ MonoBehaviour:
   - {fileID: 4614446423311493635, guid: b805197eb63decc42897cdead4162e64, type: 3}
   - {fileID: 6605654707589329122, guid: 1da8fc30c4fdb8447b5f07ec86ed0752, type: 3}
   - {fileID: 8409963029500455494, guid: 7b733a0dc4df18e4bba7ce20013b83b1, type: 3}
-  isDone: 0
+  currentlySelectedTile: {fileID: 0}
+  TurnChangeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 459665354}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdateUITurnText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1705290636
 MonoBehaviour:
   m_ObjectHideFlags: 0
