@@ -45,25 +45,25 @@ public class Tile : MonoBehaviour
             //deselect tile before selecting new tile
             if (_tileManager.currentlySelectedTile != null) _tileManager.currentlySelectedTile.DeselectTile();
             
+            if (isSelectable && _tileManager.currentlySelectedTile.holdedPiece != null) //if clicked on selectable tile piece moved event is triggered
+                _pieceMovement.MovePiece(_tileManager.currentlySelectedTile, this, _tileManager);
+            
             SelectTile();
             
         } else DeselectTile();
-        
-        if (isSelectable) //if clicked on selectable tile piece moved event is triggered
-            _pieceMovement.MovePiece();
-        
     }
     private void SelectTile()
     {
         isSelected = true;
         selected.SetActive(true);
         _tileManager.currentlySelectedTile = this;
-        
         //if selected tile has a piece in it highlight possible selectable tiles
         if (holdedPiece != null)
         {
             _tileManager.IsSelectableAllFalse(); //deselect all isSelectable when a tile that is not selectable is clicked
-            holdedPiece.HighlightSelectable(x, y, _tileManager.tilesArray);
+            
+            if(IsTurn()) //check turn
+                holdedPiece.HighlightSelectable(x, y, _tileManager.tilesArray);
         }
             
     }
@@ -81,6 +81,14 @@ public class Tile : MonoBehaviour
         selectable.SetActive(false);
         //isSelectable = false;
     }
+
+    public void DeselectEverything()
+    {
+        selectable.SetActive(false);
+        isSelectable = false;
+        selected.SetActive(false);
+        isSelected = false;
+    }
     public void SelectableHighlight()
     {
         isSelectable = true;
@@ -93,5 +101,13 @@ public class Tile : MonoBehaviour
             return true;
         }
         return false;
+    }
+    public bool IsTurn()
+    {
+        if (holdedPiece.color == 1 && _tileManager.gameTurn == false) //white
+            return true;
+        else if (holdedPiece.color == 2 && _tileManager.gameTurn == true) //black
+            return true;
+        else return false;
     }
 }

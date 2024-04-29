@@ -5,6 +5,7 @@ public class TileManager : MonoBehaviour
 {
     [SerializeField] private Tile tilePrefab;
 
+    public bool gameTurn = false; // false = white, true = black
     public bool isSavedGame = false;
 
     public Piece[] piecePrefabsW = new Piece[6];
@@ -95,5 +96,21 @@ public class TileManager : MonoBehaviour
             }    
         }
         //Debug.Log("FIRST");
+    }
+
+    public void SwitchTurn()
+    {
+        gameTurn = !gameTurn;
+        DeselectAllBoard();
+    }
+    
+    public void DeselectAllBoard()
+    {
+        foreach (var tile in tilesArray)
+        {
+            tile.DeselectEverything();
+        }
+
+        currentlySelectedTile = null;
     }
 }
