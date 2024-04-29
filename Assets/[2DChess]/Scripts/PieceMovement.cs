@@ -12,6 +12,9 @@ public class PieceMovement : MonoBehaviour
             currentlySelectedTile.holdedPiece.isFirstMove = false;
         }
         
+        if(clickedTile.holdedPiece != null)
+            Destroy(clickedTile.holdedPiece.gameObject);
+        
         Piece piece = currentlySelectedTile.holdedPiece;
         //change transform of piece to the transform of clicked tile
         piece.transform.position = clickedTile.transform.position;
