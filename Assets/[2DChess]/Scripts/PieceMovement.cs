@@ -24,6 +24,7 @@ public class PieceMovement : MonoBehaviour
         currentlySelectedTile.holdedPiece = null;
         
         //switch turn
+        clickedTile.holdedPiece.HighlightSelectable(clickedTile.x, clickedTile.y, tileManager.tilesArray); //needed for detecting check
         tileManager.SwitchTurn();
     }
 }
