@@ -4,7 +4,7 @@ public class Knight : Piece
 {
     public override void HighlightSelectable(int x, int y, Tile[,] tileArray)
     {
-        Debug.Log("Selectable Knight");
+        //Debug.Log("Selectable Knight");
         
         int[] X = { 2, 1, -1, -2, -2, -1, 1, 2 };
         int[] Y = { 1, 2, 2, 1, -1, -2, -2, -1 };
