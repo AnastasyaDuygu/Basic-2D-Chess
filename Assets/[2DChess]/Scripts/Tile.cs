@@ -52,8 +52,6 @@ public class Tile : MonoBehaviour
         if (isSelectable) //if clicked on selectable tile piece moved event is triggered
             _pieceMovement.MovePiece();
         
-        //TODO : deselect all isSelectable when a tile that is not selectable is clicked
-        
     }
     private void SelectTile()
     {
@@ -63,7 +61,11 @@ public class Tile : MonoBehaviour
         
         //if selected tile has a piece in it highlight possible selectable tiles
         if (holdedPiece != null)
+        {
+            _tileManager.IsSelectableAllFalse(); //deselect all isSelectable when a tile that is not selectable is clicked
             holdedPiece.HighlightSelectable(x, y, _tileManager.tilesArray);
+        }
+            
     }
     private void DeselectTile()
     {

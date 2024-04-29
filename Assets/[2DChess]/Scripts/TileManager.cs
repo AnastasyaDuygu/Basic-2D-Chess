@@ -86,6 +86,7 @@ public class TileManager : MonoBehaviour
 
     public void IsSelectableAllFalse()
     {
+        
         foreach (var tile in tilesArray)
         {
             if (tile.isSelectable)
@@ -93,5 +94,6 @@ public class TileManager : MonoBehaviour
                 tile.isSelectable = false;
             }    
         }
+        //Debug.Log("FIRST");
     }
 }

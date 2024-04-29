@@ -66,5 +66,6 @@ public class Pawn : Piece
                 }
             }
         }
+        //Debug.Log("SECOND");
     }
 }
