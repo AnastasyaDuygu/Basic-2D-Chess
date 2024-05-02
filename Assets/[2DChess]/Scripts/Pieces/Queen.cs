@@ -27,7 +27,7 @@ public class Queen : Piece
                         tileArray[xafter, yafter].SelectableHighlight();
                         if (tileArray[xafter, yafter].holdedPiece.GetType() == typeof(King))
                         {
-                            Debug.Log("CHECK");
+                            OnCheck();
                         }
                         break;
                     } else break;
