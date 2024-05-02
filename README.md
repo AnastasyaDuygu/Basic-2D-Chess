@@ -5,6 +5,7 @@
     <img src="Screenshots/chess_2.PNG" alt="In-Game" />
 </p>
 <br>
+
 ## Introduction
 
 This project is a simple 2D Chess game made in Unity. It is a **two player** chess game, meaning there is **NO AI**. Special moves such as; castling, pawn promotion, en passant capture do **NOT** exist in this game. The game forces you to only be able to make legal moves.
