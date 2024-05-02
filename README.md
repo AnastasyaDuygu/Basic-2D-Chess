@@ -32,7 +32,7 @@ You can easily download and play the game by following these steps:
 
 &nbsp;&nbsp;&nbsp; 1. Go to the [Releases](https://github.com/AnastasyaDuygu/Basic-2D-Chess/releases) section of this repository.  
 &nbsp;&nbsp;&nbsp; 2. Find the latest release and click on it.  
-&nbsp;&nbsp;&nbsp; 3. Download the ` v1.0.1.zip ` file from the release.  
+&nbsp;&nbsp;&nbsp; 3. Download the ` v1.0.0.zip ` file from the release.  
 &nbsp;&nbsp;&nbsp; 4. Unzip the zip file.    
 &nbsp;&nbsp;&nbsp; 5. Run ` 2D Chess` application file to start playing the game !  
 
