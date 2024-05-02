@@ -10,14 +10,16 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI Timer;
     [SerializeField] public TextMeshProUGUI Turn;
-
-    [SerializeField] private GameObject startMenu;
+    [SerializeField] public TextMeshProUGUI WinnerText;
+    
+    [SerializeField] public GameObject startMenu;
     [SerializeField] private GameObject endMenu;
 
     [SerializeField] private GameObject checkCanvas;
     
     public TileManager _tileManager;
     public JsonSaveLoadScript _Json;
+    public PieceMovement _pieceMovement;
     
     public float elapsedTime;
     public UnityEvent NoSavedGameEvent;
@@ -33,6 +35,7 @@ public class UIManager : MonoBehaviour
 
         _tileManager = FindObjectOfType<TileManager>();
         Turn.text = "Turn : White";
+        _pieceMovement = FindObjectOfType<PieceMovement>();
     }
     void Update()
     {
@@ -60,5 +63,13 @@ public class UIManager : MonoBehaviour
         
         checkCanvas.SetActive(true);
         checkCanvas.transform.DOShakeRotation(1,20, 4, 1, true);
+    }
+
+    public void EnableEndGameCanvas()
+    {
+        if (_pieceMovement.winner)
+            WinnerText.text = "Black";
+        else WinnerText.text = "White";
+        endMenu.SetActive(true);
     }
 }
