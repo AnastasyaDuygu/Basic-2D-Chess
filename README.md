@@ -2,14 +2,19 @@
 # Unity 2D Chess
 <br>
 <p align="center">
-    <img src="Screenshots/chess_2.png" alt="In-Game" />
+    <img src="Screenshots/chess_2.PNG" alt="In-Game" />
 </p>
 <br>
 ## Introduction
 
 This project is a simple 2D Chess game made in Unity. It is a **two player** chess game, meaning there is **NO AI**. Special moves such as; castling, pawn promotion, en passant capture do **NOT** exist in this game. The game forces you to only be able to make legal moves.
+<div style="display: flex; justify-content: space-between;">
+    <img src="Screenshots/chess_menu_2.PNG" width="400" height="300" alt="In-Game" />
+    <img src="Screenshots/chess_menu.PNG" width="400" height="300" alt="In-Game" />
+    <img src="Screenshots/chess_3.PNG" width="400" height="300" alt="In-Game" />
+    <img src="Screenshots/chess_4.PNG" width="400" height="300" alt="In-Game" />
+</div>
 
-![alt-text-1](https://via.placeholder.com/468x300?text=App+Screenshot+Here) ![alt-text-2](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 ## Installation
 
 
