@@ -735,6 +735,7 @@ MonoBehaviour:
   Turn: {fileID: 244078537120887760}
   startMenu: {fileID: 574505265}
   endMenu: {fileID: 348190869}
+  checkCanvas: {fileID: 8745697503545859055}
   _tileManager: {fileID: 0}
   _Json: {fileID: 0}
   elapsedTime: 0
@@ -994,7 +995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2735849, g: 0.2722944, b: 0.2722944, a: 1}
+  m_Color: {r: 0.121568635, g: 0.121568635, b: 0.121568635, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1074,9 +1075,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.07651517
+    y: 0.018939406
     width: 1
-    height: 0.84696966
+    height: 0.9621212
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
