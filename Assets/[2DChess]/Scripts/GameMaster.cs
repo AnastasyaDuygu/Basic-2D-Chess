@@ -7,4 +7,8 @@ public class GameMaster : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
