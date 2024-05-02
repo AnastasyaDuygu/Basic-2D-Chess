@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
@@ -31,8 +32,11 @@ public class Tile : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        if (!isSelected)
-            hover.SetActive(true);
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            if (!isSelected)
+                hover.SetActive(true);
+        }
     }
     private void OnMouseExit()
     {
@@ -40,17 +44,20 @@ public class Tile : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (!isSelected)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            //deselect tile before selecting new tile
-            if (_tileManager.currentlySelectedTile != null) _tileManager.currentlySelectedTile.DeselectTile();
+            if (!isSelected)
+            {
+                //deselect tile before selecting new tile
+                if (_tileManager.currentlySelectedTile != null) _tileManager.currentlySelectedTile.DeselectTile();
             
-            if (isSelectable && _tileManager.currentlySelectedTile.holdedPiece != null) //if clicked on selectable tile piece moved event is triggered
-                _pieceMovement.MovePiece(_tileManager.currentlySelectedTile, this, _tileManager);
+                if (isSelectable && _tileManager.currentlySelectedTile.holdedPiece != null) //if clicked on selectable tile piece moved event is triggered
+                    _pieceMovement.MovePiece(_tileManager.currentlySelectedTile, this, _tileManager);
             
-            SelectTile();
+                SelectTile();
             
-        } else DeselectTile();
+            } else DeselectTile();   
+        }
     }
     private void SelectTile()
     {
