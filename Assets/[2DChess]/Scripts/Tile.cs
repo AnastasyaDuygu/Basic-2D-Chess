@@ -62,6 +62,9 @@ public class Tile : MonoBehaviour
         {
             _tileManager.IsSelectableAllFalse(); //deselect all isSelectable when a tile that is not selectable is clicked
             
+            if (_tileManager.gameTurn == false) _tileManager.whiteCheck = false;
+            else _tileManager.blackCheck = false;
+            
             if(IsTurn()) //check turn
                 holdedPiece.HighlightSelectable(x, y, _tileManager.tilesArray);
         }

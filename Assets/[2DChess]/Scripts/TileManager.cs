@@ -8,6 +8,9 @@ public class TileManager : MonoBehaviour
     
     public bool gameTurn = false; // false = white, true = black
 
+    public bool whiteCheck;
+    public bool blackCheck;
+    
     public Piece[] piecePrefabsW = new Piece[6];
     public Piece[] piecePrefabsB = new Piece[6];
     public int[,] startArray = { 
