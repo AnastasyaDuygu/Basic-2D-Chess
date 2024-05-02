@@ -733,11 +733,13 @@ MonoBehaviour:
   SavedGameButton: {fileID: 484410083}
   Timer: {fileID: 3719086839301818778}
   Turn: {fileID: 244078537120887760}
+  WinnerText: {fileID: 6749151296733137520}
   startMenu: {fileID: 574505265}
   endMenu: {fileID: 348190869}
   checkCanvas: {fileID: 8745697503545859055}
   _tileManager: {fileID: 0}
   _Json: {fileID: 0}
+  _pieceMovement: {fileID: 0}
   elapsedTime: 0
   NoSavedGameEvent:
     m_PersistentCalls:
@@ -2067,6 +2069,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 10611149594402243, guid: b6eaa9fe399b8a645ad1eda8645c80ca, type: 3}
   gameTurn: 0
+  whiteCheck: 0
+  blackCheck: 0
   piecePrefabsW:
   - {fileID: -430318224249602287, guid: d2c29973ac9e2384196258475d9576c7, type: 3}
   - {fileID: 8388944185083117255, guid: 85f63e09d0170854684d645a7ce56391, type: 3}
@@ -2109,6 +2113,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbebbc25669bd145801da4e95b955f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winner: 0
+  GameEndEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 459665354}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: EnableEndGameCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1847497001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,7 +3265,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6749151296779654265}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 837960102}
+        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &6749151296779654271
 RectTransform:
   m_ObjectHideFlags: 0
