@@ -18,6 +18,11 @@ public class Knight : Piece
                 if (!isPieceInTile(tileArray[xafter, yafter]) || diffColor(tileArray[xafter, yafter], color))
                 {
                     tileArray[xafter, yafter].SelectableHighlight();
+                    if (isPieceInTile(tileArray[xafter, yafter]))
+                        if (tileArray[xafter, yafter].holdedPiece.GetType() == typeof(King))
+                        {
+                            OnCheck();
+                        }
                 }
             }
         }

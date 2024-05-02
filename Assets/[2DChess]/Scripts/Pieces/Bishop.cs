@@ -26,6 +26,10 @@ public class Bishop : Piece
                     else if (diffColor(tileArray[xafter, yafter], color))
                     {
                         tileArray[xafter, yafter].SelectableHighlight();
+                        if (tileArray[xafter, yafter].holdedPiece.GetType() == typeof(King))
+                        {
+                            OnCheck();
+                        }
                         break;
                     }
                     else break;

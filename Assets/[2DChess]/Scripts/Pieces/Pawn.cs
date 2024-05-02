@@ -39,6 +39,10 @@ public class Pawn : Piece
             {
                 //Debug.Log("PIECE RIGHT");
                 tileArray[rightx, yafter].SelectableHighlight();
+                if (tileArray[rightx, yafter].holdedPiece.GetType() == typeof(King))
+                {
+                    OnCheck();
+                }
             }
         }
         if (leftx < 8 && leftx >= 0 && yafter < 8 && yafter >= 0)
@@ -47,6 +51,10 @@ public class Pawn : Piece
             {
                 //Debug.Log("PIECE LEFT");
                 tileArray[leftx, yafter].SelectableHighlight();
+                if (tileArray[leftx, yafter].holdedPiece.GetType() == typeof(King))
+                {
+                    OnCheck();
+                }
             }
         }
         

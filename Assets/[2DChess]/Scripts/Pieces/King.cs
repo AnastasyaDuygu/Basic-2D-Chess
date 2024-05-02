@@ -12,10 +12,20 @@ public class King : Piece
         {
             int xafter = x + X[i];
             int yafter = y + Y[i];
-            
+
             if (xafter < 8 && xafter >= 0 && yafter < 8 && yafter >= 0)
-                if (!isPieceInTile(tileArray[xafter, yafter]) || diffColor(tileArray[xafter, yafter], color)) 
+            {
+                if (!isPieceInTile(tileArray[xafter, yafter]))
                     tileArray[xafter, yafter].SelectableHighlight();
+                else if (diffColor(tileArray[xafter, yafter], color))
+                {
+                    tileArray[xafter, yafter].SelectableHighlight();
+                    if (tileArray[xafter, yafter].holdedPiece.GetType() == typeof(King))
+                    {
+                        OnCheck();
+                    }
+                }
+            }
         }
     }
 }
