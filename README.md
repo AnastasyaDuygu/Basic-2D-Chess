@@ -19,7 +19,7 @@ This project is a simple 2D Chess game made in Unity. It is a **two player** che
 ## Installation
 
 
-To run the Cube Runner game on your Windows system, follow these steps:
+To run the 2D Chess game on your Windows system, follow these steps:
 
 &nbsp;&nbsp;&nbsp; 1. Clone this repository or download it as a ZIP file.  
 &nbsp;&nbsp;&nbsp; 2. Open the project in Visual Studio or your preferred C++ IDE.  
